@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import TodoList from "./Todo/TodoList";
 import Context from "./context";
-import AddTodo from "./Todo/AddTodo";
 import Loader from './Loader'
-
+import AddTodo from './Todo/AddTodo'
+import Modal from './Modal/Modal'
 
 
 function App() {
@@ -45,6 +45,7 @@ function App() {
     <Context.Provider value={{ removeTodo }}>
       <div className="wrapper">
         <h1>ToDo</h1>
+        <Modal/>
         <AddTodo onCreate={addTodo} />
         {loading && <Loader />}
         {todos.length ? (
